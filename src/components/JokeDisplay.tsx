@@ -7,19 +7,25 @@ interface JokeProps {
 }
 
 function JokeDisplay({joke}: JokeProps) {
-  
+
   const [showPunchline, setShowPunchline] = useState(false);
-  const num = Math.round(Math.random() * 6)
+  const [num, setNum] = useState<number>(Math.floor(Math.random() * 6) + 1);
+
+  const revealPunchline = () => {
+    if (!showPunchline) {
+      setShowPunchline(true);
+    }
+      setNum(Math.floor(Math.random() * 6) + 1);
+  };
 
   return (
     <div>
       <h3>{joke.setup}</h3>
-        {!showPunchline ? ( //if showPunchline is not show
-          <Button text="Reveal Punchline" onClickHandler={() => setShowPunchline(true)} />
-        ) : ( //else
+      <Button text="Reveal Punchline" onClickHandler={revealPunchline} />
+        {showPunchline && (
           <div>
-            <img src={`img/lol${num}.gif`} alt="Gif" />
             <p>{joke.punchline}</p>
+            <img src={`img/lol${num}.gif`} alt="Gif" />
           </div>
         )}
     </div>
