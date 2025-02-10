@@ -1,7 +1,7 @@
 import './App.css'
 import Button from './components/Button'
 import Header from './components/Header'
-import { Joke } from './types/Interfaces'
+import { Joke } from './types/interfaces'
 import { useState } from 'react'
 import { getRandomJoke } from './services/jokeApi'
 import JokeDisplay from './components/JokeDisplay'

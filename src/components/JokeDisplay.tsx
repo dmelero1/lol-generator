@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Joke } from "../types/Interfaces";
+import { Joke } from "../types/interfaces";
 import Button from "./Button";
 
 interface JokeProps {

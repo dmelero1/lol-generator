@@ -1,4 +1,4 @@
-import { Joke } from "../types/Interfaces";
+import { Joke } from "../types/interfaces";
 
 export async function getRandomJoke(){
     try {
