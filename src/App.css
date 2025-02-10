@@ -44,7 +44,7 @@ body {
     color: #61574B;
     box-sizing: border-box;
     cursor: pointer;
-  
+    margin-bottom: 20px;
   }
   
   .button:hover {
