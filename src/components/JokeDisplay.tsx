@@ -9,6 +9,7 @@ interface JokeProps {
 function JokeDisplay({joke}: JokeProps) {
   
   const [showPunchline, setShowPunchline] = useState(false);
+  const num = Math.round(Math.random() * 6)
 
   return (
     <div>
@@ -16,7 +17,10 @@ function JokeDisplay({joke}: JokeProps) {
         {!showPunchline ? ( //if showPunchline is not show
           <Button text="Reveal Punchline" onClickHandler={() => setShowPunchline(true)} />
         ) : ( //else
-          <p>{joke.punchline}</p>
+          <div>
+            <img src={`img/lol${num}.gif`} alt="Gif" />
+            <p>{joke.punchline}</p>
+          </div>
         )}
     </div>
   )
