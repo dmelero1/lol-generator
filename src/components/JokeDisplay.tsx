@@ -4,11 +4,11 @@ import Button from "./Button";
 
 interface JokeProps {
     joke: Joke;
+    showPunchline: boolean;
+    setShowPunchline: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function JokeDisplay({joke}: JokeProps) {
-
-  const [showPunchline, setShowPunchline] = useState(false);
+function JokeDisplay({ joke, showPunchline, setShowPunchline }: JokeProps) {
   const [num, setNum] = useState<number>(Math.floor(Math.random() * 6) + 1);
 
   const revealPunchline = () => {
@@ -29,7 +29,7 @@ function JokeDisplay({joke}: JokeProps) {
           </div>
         )}
     </div>
-  )
+  );
 }
 
 export default JokeDisplay

@@ -9,10 +9,12 @@ import JokeDisplay from './components/JokeDisplay'
 function App() {
 
   const [joke, setJoke] = useState<Joke | null>(null);
+  const [showPunchline, setShowPunchline] = useState(false); 
 
   const onClickHandler = () => {
     getRandomJoke().then((newJoke: Joke | null) => {
       setJoke(newJoke);
+      setShowPunchline(false); 
     });
   }
 
@@ -23,7 +25,7 @@ function App() {
         text = "Get a joke"
         onClickHandler={onClickHandler} 
       />
-      {joke && <JokeDisplay joke={joke} />}
+      {joke && <JokeDisplay joke={joke} showPunchline={showPunchline} setShowPunchline={setShowPunchline} />}
     </div>
   )
 }
